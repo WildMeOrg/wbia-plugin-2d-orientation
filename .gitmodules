@@ -1,0 +1,6 @@
+[submodule "2D-Orientation-v2"]
+	path = 2D-Orientation-v2
+	url = https://github.com/WildbookOrg/2D-Orientation-v2
+[submodule "ibeis_2d_orientation"]
+	path = ibeis_2d_orientation
+	url = https://github.com/WildbookOrg/2D-Orientation-v2
