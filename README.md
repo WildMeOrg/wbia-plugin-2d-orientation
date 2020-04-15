@@ -1,7 +1,7 @@
 # IBEIS 2D Orientation Plug-in
 An ibeis plug-in wrapper for https://github.com/hgrov52/2D-Orientation-v2#plugin
 
-![Image of Predictions](###)
+![Image of Predictions](_images/example.jpg)
 
 # Requirements
 
