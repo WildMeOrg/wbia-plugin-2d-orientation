@@ -45,19 +45,21 @@ SUFFIX              = 'dev0'
 VERSION             = '%d.%d.%d.%s' % (MAJOR, MINOR, MICRO, SUFFIX)
 PACKAGES            = ['ibeis_2d_orientation']
 REQUIREMENTS        = [
-    'annoy',
-    # 'cv2',
-    'h5py',
-    'lasagne',
-    'luigi',
-    'matplotlib',
+    'torchvision',
+    'torch',
     'numpy',
-    'pandas',
-    'scipy',
-    'six',
-    'theano',
-    'tqdm',
+    'matplotlib',
+    'plottool',
     'utool',
+    'vtool',
+    'dtool',
+    # 'cv2',
+    'tqdm',
+    'ibeis',
+    'pandas',
+    'argparse',
+    'scikit-learn',
+    'scikit-image',
 ]
 
 
