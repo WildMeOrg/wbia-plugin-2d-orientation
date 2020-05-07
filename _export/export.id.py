@@ -41,7 +41,7 @@ def encounter_deltas(unixtimes):
         else:
             try:
                 delta = unixtime - previous
-            except:
+            except Exception:
                 delta = 0
         # print(delta)
         assert delta >= 0
