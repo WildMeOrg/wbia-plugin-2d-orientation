@@ -49,7 +49,7 @@ REQUIREMENTS        = [
     'torch',
     'numpy',
     'matplotlib',
-    'plottool',
+    'plottool_ibeis',
     'utool',
     'vtool',
     'dtool',
