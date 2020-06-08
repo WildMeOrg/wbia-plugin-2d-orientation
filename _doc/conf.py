@@ -7,7 +7,7 @@ import os
 os.environ['IBIES_PARSE_ARGS'] = 'OFF'
 os.environ['UTOOL_AUTOGEN_SPHINX_RUNNING'] = 'ON'
 
-sys.path.append('/Users/jason.parham/code/ibeis-2d-orientation-module')
+sys.path.append('/Users/jason.parham/code/wbia-2d-orientation-module')
 # sys.path.append(sys.path.insert(0, os.path.abspath("../")))
 
 autosummary_generate = True
@@ -28,7 +28,7 @@ html_theme_path = ["_themes", ]
 
 # -- Project information -----------------------------------------------------
 
-project = 'ibeis_2d_orientation'
+project = 'wbia_2d_orientation'
 copyright = '2018, Wild Me'
 author = 'Jason Parham, Drew Blount'
 

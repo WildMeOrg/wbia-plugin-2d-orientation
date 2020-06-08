@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = ibeis_2d_orientation
+SPHINXPROJ    = wbia_2d_orientation
 SOURCEDIR     = .
 BUILDDIR      = _build
 

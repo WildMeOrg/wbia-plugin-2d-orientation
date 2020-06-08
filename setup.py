@@ -26,12 +26,12 @@ Programming Language :: Python :: 3.3
 Programming Language :: Python :: 3.4
 Topic :: Scientific/Engineering :: Bio-Informatics
 '''
-NAME                = 'ibeis_2d_orientation'
+NAME                = 'wbia_2d_orientation'
 MAINTAINER          = 'Wildbook Org. | IBEIS IA'
 MAINTAINER_EMAIL    = 'info@wildme.org'
 DESCRIPTION         = 'A plugin wrapper for Henry Grover\'s 2D orientation estimation module'
 LONG_DESCRIPTION    = DESCRIPTION
-KEYWORDS            = ['ibeis', 'plugin', 'wildbook', 'ia', 'orientation']
+KEYWORDS            = ['wbia', 'plugin', 'wildbook', 'ia', 'orientation']
 URL                 = 'https://github.com/WildbookOrg/'
 DOWNLOAD_URL        = ''
 LICENSE             = 'Apache'
@@ -43,7 +43,7 @@ MINOR               = 1
 MICRO               = 0
 SUFFIX              = 'dev0'
 VERSION             = '%d.%d.%d.%s' % (MAJOR, MINOR, MICRO, SUFFIX)
-PACKAGES            = ['ibeis_2d_orientation']
+PACKAGES            = ['wbia_2d_orientation']
 REQUIREMENTS        = [
     'torchvision',
     'torch',
@@ -53,7 +53,7 @@ REQUIREMENTS        = [
     'vtool',
     # 'cv2',
     'tqdm',
-    'ibeis',
+    'wbia',
     'pandas',
     'argparse',
     'scikit-learn',
@@ -88,9 +88,9 @@ def git_version():
     return git_revision
 
 
-def write_version_py(filename=os.path.join('ibeis_2d_orientation', '__init__.py')):
+def write_version_py(filename=os.path.join('wbia_2d_orientation', '__init__.py')):
     cnt = '''# THIS FILE IS GENERATED FROM SETUP.PY
-from ibeis_2d_orientation import _plugin  # NOQA
+from wbia_2d_orientation import _plugin  # NOQA
 
 __version__      = '%(version)s'
 __version_git__  = '%(git_revision)s'

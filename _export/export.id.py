@@ -1,4 +1,4 @@
-import ibeis
+import wbia
 import random
 import numpy as np
 import vtool as vt
@@ -82,7 +82,7 @@ def align(bbox, theta, width, height):
 test_uuid_list = []
 for model_tag in TEST_URLS:
     json_url = TEST_URLS[model_tag]
-    json_filepath = ut.grab_file_url(json_url, appname='ibeis_2d_orientation', check_hash=False)
+    json_filepath = ut.grab_file_url(json_url, appname='wbia_2d_orientation', check_hash=False)
 
     with open(json_filepath, 'r') as file:
         json_data = yaml.load(file, Loader=yaml.FullLoader)
@@ -138,18 +138,18 @@ for species in desired_species_list:
         viewpoint_mapping[species] = {}
 
 db_value_list = [
-    ('/data/ibeis/ST_Master', 'left', True,  False, True ),
-    ('/data/ibeis/SD_Master', 'left', True,  False, True ),
-    ('/data/ibeis/MM_Master', 'down', False, False, False),
-    ('/data/ibeis/HH_Master', None,   False, False, True ),
-    ('/data/ibeis/RW_Master', 'up',   False, True,  True ),
+    ('/data/wbia/ST_Master', 'left', True,  False, True ),
+    ('/data/wbia/SD_Master', 'left', True,  False, True ),
+    ('/data/wbia/MM_Master', 'down', False, False, False),
+    ('/data/wbia/HH_Master', None,   False, False, True ),
+    ('/data/wbia/RW_Master', 'up',   False, True,  True ),
 ]
 
-ibs_dst = ibeis.opendb(dbdir='/data/ibeis/testdb_orientation_updated/')
+ibs_dst = wbia.opendb(dbdir='/data/wbia/testdb_orientation_updated/')
 
 for dbdir, desired_viewpoint, use_parts, reviewed_only, test_only in db_value_list:
 
-    ibs_src = ibeis.opendb(dbdir=dbdir)
+    ibs_src = wbia.opendb(dbdir=dbdir)
     print(ibs_src)
 
     test_only = False

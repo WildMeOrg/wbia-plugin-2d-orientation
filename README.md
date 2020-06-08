@@ -1,5 +1,5 @@
 # IBEIS 2D Orientation Plug-in
-An ibeis plug-in wrapper for https://github.com/hgrov52/2D-Orientation-v2#plugin
+An wbia plug-in wrapper for https://github.com/hgrov52/2D-Orientation-v2#plugin
 
 ![Image of Predictions](_images/example-v2.jpg)
 
@@ -10,7 +10,7 @@ An ibeis plug-in wrapper for https://github.com/hgrov52/2D-Orientation-v2#plugin
 * Numpy
 * Pandas
 * Matlotlib
-* IBEIS and related dependencies: ibeis, utool, vtool, dtool, plottool
+* IBEIS and related dependencies: wbia, utool, vtool, dtool, plottool
 * TQDM
 * ArgParse
 * SciKit Learn and SciKit Image
@@ -20,13 +20,13 @@ An ibeis plug-in wrapper for https://github.com/hgrov52/2D-Orientation-v2#plugin
 Install this plug-in as a Python module using
 
 ```bash
-cd ~/code/ibeis-2d-orientation-module/
+cd ~/code/wbia-2d-orientation-module/
 pip install -e .
 ```
 
 With the plug-in installed, register the module name with the `IBEISControl.py` file
-in the ibeis repository located at `ibeis/ibeis/control/IBEISControl.py`.  Register
-the module by adding the string (for example, `ibeis_2d_orientation`) to the
+in the wbia repository located at `wbia/wbia/control/IBEISControl.py`.  Register
+the module by adding the string (for example, `wbia_2d_orientation`) to the
 list `AUTOLOAD_PLUGIN_MODNAMES`.
 
 Alternatively, you can start an IBEIS 
@@ -49,10 +49,10 @@ Download: https://cthulhu.dyn.wildme.io/public/databases/testdb_orientation.zip
 
 # Render ID Examples
 ```
-$ python -m ibeis_2d_orientation._plugin --test-ibeis_plugin_orientation_2d_render_examples
+$ python -m wbia_2d_orientation._plugin --test-wbia_plugin_orientation_2d_render_examples
 ```
 
 # Render ID Performance
 ```
-$ python -m ibeis_2d_orientation._plugin --test-ibeis_plugin_orientation_2d_render_feasability
+$ python -m wbia_2d_orientation._plugin --test-wbia_plugin_orientation_2d_render_feasability
 ```

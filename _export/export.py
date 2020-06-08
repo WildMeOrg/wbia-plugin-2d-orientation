@@ -1,4 +1,4 @@
-import ibeis
+import wbia
 import utool as ut
 
 '''
@@ -14,7 +14,7 @@ databases
 ################################################################################
 
 # Sea Turtles
-ibs = ibeis.opendb(dbdir='/data/ibeis/ST_Master')
+ibs = wbia.opendb(dbdir='/data/wbia/ST_Master')
 
 all_aid_list = ibs.get_valid_aids()
 all_species_list = ibs.get_annot_species(all_aid_list)
@@ -68,7 +68,7 @@ ut.move(src_path, dst_path)
 ################################################################################
 
 # Sea Drgons
-ibs = ibeis.opendb(dbdir='/data/ibeis/SD_Master')
+ibs = wbia.opendb(dbdir='/data/wbia/SD_Master')
 
 all_aid_list = ibs.get_valid_aids()
 all_species_list = ibs.get_annot_species(all_aid_list)
@@ -174,7 +174,7 @@ ut.move(src_path, dst_path)
 ################################################################################
 
 # Manta Rays
-ibs = ibeis.opendb(dbdir='/data/ibeis/MM_Master')
+ibs = wbia.opendb(dbdir='/data/wbia/MM_Master')
 
 # all_gid_list = ibs.get_valid_gids()
 # all_review_list = ibs.get_image_reviewed(all_gid_list)
@@ -217,7 +217,7 @@ ut.move(src_path, dst_path)
 ################################################################################
 
 # Hammerhead
-ibs = ibeis.opendb(dbdir='/data/ibeis/HH_Master')
+ibs = wbia.opendb(dbdir='/data/wbia/HH_Master')
 
 # all_gid_list = ibs.get_valid_gids()
 # all_review_list = ibs.get_image_reviewed(all_gid_list)
@@ -238,7 +238,7 @@ ut.move(src_path, dst_path)
 ################################################################################
 
 # Right Whale Heads
-ibs = ibeis.opendb(dbdir='/data/ibeis/RW_Master')
+ibs = wbia.opendb(dbdir='/data/wbia/RW_Master')
 
 all_gid_list = ibs.get_valid_gids()
 all_review_list = ibs.get_image_reviewed(all_gid_list)
