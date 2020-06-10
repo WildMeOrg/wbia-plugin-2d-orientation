@@ -1,21 +1,21 @@
-ibeis\_2d\_orientation package
+wbia\_2d\_orientation package
 ==============================
 
 Submodules
 ----------
 
-ibeis\_2d\_orientation.\_plugin module
+wbia\_2d\_orientation.\_plugin module
 --------------------------------------
 
-.. automodule:: ibeis_2d_orientation._plugin
+.. automodule:: wbia_2d_orientation._plugin
     :members:
     :undoc-members:
     :show-inheritance:
 
-ibeis\_2d\_orientation.\_plugin\_depc module
+wbia\_2d\_orientation.\_plugin\_depc module
 --------------------------------------------
 
-.. automodule:: ibeis_2d_orientation._plugin_depc
+.. automodule:: wbia_2d_orientation._plugin_depc
     :members:
     :undoc-members:
     :show-inheritance:
@@ -24,7 +24,7 @@ ibeis\_2d\_orientation.\_plugin\_depc module
 Module contents
 ---------------
 
-.. automodule:: ibeis_2d_orientation
+.. automodule:: wbia_2d_orientation
     :members:
     :undoc-members:
     :show-inheritance:
