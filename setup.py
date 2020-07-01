@@ -4,13 +4,14 @@ from __future__ import absolute_import, print_function, division
 import subprocess
 import sys
 import os
+
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
 
-CLASSIFIERS = '''
+CLASSIFIERS = """
 Development Status :: 3 - Alpha
 Intended Audience :: Developers
 Intended Audience :: Science/Research
@@ -26,26 +27,26 @@ Programming Language :: Python :: 3
 Programming Language :: Python :: 3.3
 Programming Language :: Python :: 3.4
 Topic :: Scientific/Engineering :: Bio-Informatics
-'''
-NAME                = 'wbia_2d_orientation'
-MAINTAINER          = 'Wildbook Org. | IBEIS IA'
-MAINTAINER_EMAIL    = 'info@wildme.org'
-DESCRIPTION         = 'A plugin wrapper for Henry Grover\'s 2D orientation estimation module'
-LONG_DESCRIPTION    = DESCRIPTION
-KEYWORDS            = ['wbia', 'plugin', 'wildbook', 'ia', 'orientation']
-URL                 = 'https://github.com/WildbookOrg/'
-DOWNLOAD_URL        = ''
-LICENSE             = 'Apache'
-AUTHOR              = MAINTAINER
-AUTHOR_EMAIL        = MAINTAINER_EMAIL
-PLATFORMS           = ['Windows', 'Linux', 'Solaris', 'Mac OS-X', 'Unix']
-MAJOR               = 0
-MINOR               = 1
-MICRO               = 0
-SUFFIX              = 'dev0'
-VERSION             = '%d.%d.%d.%s' % (MAJOR, MINOR, MICRO, SUFFIX)
-PACKAGES            = ['wbia_2d_orientation']
-REQUIREMENTS        = [
+"""
+NAME = 'wbia_2d_orientation'
+MAINTAINER = 'Wildbook Org. | IBEIS IA'
+MAINTAINER_EMAIL = 'info@wildme.org'
+DESCRIPTION = "A plugin wrapper for Henry Grover's 2D orientation estimation module"
+LONG_DESCRIPTION = DESCRIPTION
+KEYWORDS = ['wbia', 'plugin', 'wildbook', 'ia', 'orientation']
+URL = 'https://github.com/WildbookOrg/'
+DOWNLOAD_URL = ''
+LICENSE = 'Apache'
+AUTHOR = MAINTAINER
+AUTHOR_EMAIL = MAINTAINER_EMAIL
+PLATFORMS = ['Windows', 'Linux', 'Solaris', 'Mac OS-X', 'Unix']
+MAJOR = 0
+MINOR = 1
+MICRO = 0
+SUFFIX = 'dev0'
+VERSION = '%d.%d.%d.%s' % (MAJOR, MINOR, MICRO, SUFFIX)
+PACKAGES = ['wbia_2d_orientation']
+REQUIREMENTS = [
     'torchvision',
     'torch',
     'numpy',
@@ -64,6 +65,7 @@ REQUIREMENTS        = [
 
 def git_version():
     """Return the sha1 of local git HEAD as a string."""
+
     def _minimal_ext_cmd(cmd):
         # construct minimal environment
         env = {}
@@ -75,12 +77,9 @@ def git_version():
         env['LANGUAGE'] = 'C'
         env['LANG'] = 'C'
         env['LC_ALL'] = 'C'
-        out = subprocess.Popen(
-            cmd,
-            stdout=subprocess.PIPE,
-            env=env
-        ).communicate()[0]
+        out = subprocess.Popen(cmd, stdout=subprocess.PIPE, env=env).communicate()[0]
         return out
+
     try:
         out = _minimal_ext_cmd(['git', 'rev-parse', 'HEAD'])
         git_revision = out.strip().decode('ascii')
@@ -90,13 +89,13 @@ def git_version():
 
 
 def write_version_py(filename=os.path.join('wbia_2d_orientation', '__init__.py')):
-    cnt = '''# THIS FILE IS GENERATED FROM SETUP.PY
+    cnt = """# THIS FILE IS GENERATED FROM SETUP.PY
 from wbia_2d_orientation import _plugin  # NOQA
 
 __version__      = '%(version)s'
 __version_git__  = '%(git_revision)s'
 __version_full__ = '%%s.%%s' %% (__version__, __version_git__, )
-'''
+"""
     FULL_VERSION = VERSION
     if os.path.isdir('.git'):
         GIT_REVISION = git_version()
@@ -106,10 +105,7 @@ __version_full__ = '%%s.%%s' %% (__version__, __version_git__, )
         GIT_REVISION = 'unknown'
 
     FULL_VERSION += '.' + GIT_REVISION
-    text = cnt % {
-        'version': VERSION,
-        'git_revision': GIT_REVISION
-    }
+    text = cnt % {'version': VERSION, 'git_revision': GIT_REVISION}
     try:
         with open(filename, 'w') as a:
             a.write(text)
@@ -121,13 +117,15 @@ def do_setup():
     try:
         import cv2  # NOQA
     except ImportError:
-        print('''
+        print(
+            """
 OpenCV (cv2) required by this module.
 
 Install using source provided by https://github.com/opencv/opencv
 or
 pip install opencv-python
-''')
+"""
+        )
         sys.exit(0)
 
     write_version_py()

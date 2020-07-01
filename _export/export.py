@@ -2,7 +2,7 @@
 import wbia
 import utool as ut
 
-'''
+"""
 databases
   - sea turtles
   - sea dragons
@@ -10,7 +10,7 @@ databases
   - hammerheads
   - right whale heads
   - [SKIPPED] spotted dolphin dorsal fins
-'''
+"""
 
 ################################################################################
 
@@ -20,7 +20,8 @@ ibs = wbia.opendb(dbdir='/data/wbia/ST_Master')
 all_aid_list = ibs.get_valid_aids()
 all_species_list = ibs.get_annot_species(all_aid_list)
 all_flag_list = [
-    all_species in set(['turtle_green+head', 'turtle_hawksbill+head', 'turtle_oliveridley+head'])
+    all_species
+    in set(['turtle_green+head', 'turtle_hawksbill+head', 'turtle_oliveridley+head'])
     for all_species in all_species_list
 ]
 delete_aid_list = ut.compress(all_aid_list, all_flag_list)
@@ -39,30 +40,36 @@ species_mapping = {}
 
 viewpoint_mapping = {
     species: {
-        'left'       : 'left',
-        'frontleft'  : 'front',
-        'front'      : 'front',
-        'frontright' : 'front',
-        'right'      : 'right',
-        'backright'  : 'back',
-        'back'       : 'back',
-        'backleft'   : 'back',
-        'up'         : 'up',
-        'upleft'     : 'left',
-        'upfront'    : 'front',
-        'upright'    : 'right',
-        'upback'     : 'back',
-        'down'       : 'down',
-        'downleft'   : 'left',
-        'downfront'  : 'front',
-        'downright'  : 'right',
-        'downback'   : 'back',
-        None         : None,
+        'left': 'left',
+        'frontleft': 'front',
+        'front': 'front',
+        'frontright': 'front',
+        'right': 'right',
+        'backright': 'back',
+        'back': 'back',
+        'backleft': 'back',
+        'up': 'up',
+        'upleft': 'left',
+        'upfront': 'front',
+        'upright': 'right',
+        'upback': 'back',
+        'down': 'down',
+        'downleft': 'left',
+        'downfront': 'front',
+        'downright': 'right',
+        'downback': 'back',
+        None: None,
     }
     for species in species_list
 }
 
-src_path = ibs.export_to_coco(species_list, species_mapping=species_mapping, viewpoint_mapping=viewpoint_mapping, include_parts=True, require_image_reviewed=True)
+src_path = ibs.export_to_coco(
+    species_list,
+    species_mapping=species_mapping,
+    viewpoint_mapping=viewpoint_mapping,
+    include_parts=True,
+    require_image_reviewed=True,
+)
 dst_path = '/data/public/datasets/orientation.seaturtle.coco'
 ut.move(src_path, dst_path)
 
@@ -91,84 +98,90 @@ species_mapping = {}
 
 viewpoint_mapping = {
     'seadragon_leafy': {
-        'left'       : 'left',
-        'frontleft'  : 'front',
-        'front'      : 'front',
-        'frontright' : 'front',
-        'right'      : 'right',
-        'backright'  : 'back',
-        'backleft'   : 'back',
-        'back'       : 'back',
-        'upleft'     : 'left',
-        'downleft'   : 'left',
-        'upfront'    : 'front',
-        'upright'    : 'right',
-        'downright'  : 'right',
-        'downback'   : 'back',
-        'up'         : 'up',
-        'down'       : 'down',
-        None         : None,
+        'left': 'left',
+        'frontleft': 'front',
+        'front': 'front',
+        'frontright': 'front',
+        'right': 'right',
+        'backright': 'back',
+        'backleft': 'back',
+        'back': 'back',
+        'upleft': 'left',
+        'downleft': 'left',
+        'upfront': 'front',
+        'upright': 'right',
+        'downright': 'right',
+        'downback': 'back',
+        'up': 'up',
+        'down': 'down',
+        None: None,
     },
     'seadragon_weedy': {
-        'left'       : 'left',
-        'frontleft'  : 'frontleft',
-        'front'      : 'front',
-        'frontright' : 'frontright',
-        'right'      : 'right',
-        'backright'  : 'backright',
-        'back'       : 'back',
-        'backleft'   : 'backleft',
-        'upleft'     : 'left',
-        'upright'    : 'right',
-        'downleft'   : 'left',
-        'downright'  : 'right',
-        'up'         : 'up',
-        'downfront'  : 'front',
-        'upfront'    : 'front',
-        'upback'     : 'bacl',
-        None         : None,
+        'left': 'left',
+        'frontleft': 'frontleft',
+        'front': 'front',
+        'frontright': 'frontright',
+        'right': 'right',
+        'backright': 'backright',
+        'back': 'back',
+        'backleft': 'backleft',
+        'upleft': 'left',
+        'upright': 'right',
+        'downleft': 'left',
+        'downright': 'right',
+        'up': 'up',
+        'downfront': 'front',
+        'upfront': 'front',
+        'upback': 'bacl',
+        None: None,
     },
     'seadragon_leafy+head': {
-        'left'       : 'left',
-        'frontleft'  : 'front',
-        'front'      : 'front',
-        'frontright' : 'front',
-        'right'      : 'right',
-        'backleft'   : 'back',
-        'backright'  : 'back',
-        'back'       : 'back',
-        'upleft'     : 'left',
-        'downleft'   : 'left',
-        'upfront'    : 'front',
-        'upright'    : 'right',
-        'downright'  : 'right',
-        'downback'   : 'back',
-        'up'         : 'up',
-        'down'       : 'down',
-        None         : None,
+        'left': 'left',
+        'frontleft': 'front',
+        'front': 'front',
+        'frontright': 'front',
+        'right': 'right',
+        'backleft': 'back',
+        'backright': 'back',
+        'back': 'back',
+        'upleft': 'left',
+        'downleft': 'left',
+        'upfront': 'front',
+        'upright': 'right',
+        'downright': 'right',
+        'downback': 'back',
+        'up': 'up',
+        'down': 'down',
+        None: None,
     },
     'seadragon_weedy+head': {
-        'left'       : 'left',
-        'frontleft'  : 'frontleft',
-        'front'      : 'front',
-        'frontright' : 'frontright',
-        'right'      : 'right',
-        'backright'  : 'backright',
-        'back'       : 'back',
-        'backleft'   : 'backleft',
-        'upleft'     : 'left',
-        'upright'    : 'right',
-        'downleft'   : 'left',
-        'downright'  : 'right',
-        'up'         : 'up',
-        'downfront'  : 'front',
-        'upfront'    : 'front',
-        'upback'     : 'back',
-        None         : None,
+        'left': 'left',
+        'frontleft': 'frontleft',
+        'front': 'front',
+        'frontright': 'frontright',
+        'right': 'right',
+        'backright': 'backright',
+        'back': 'back',
+        'backleft': 'backleft',
+        'upleft': 'left',
+        'upright': 'right',
+        'downleft': 'left',
+        'downright': 'right',
+        'up': 'up',
+        'downfront': 'front',
+        'upfront': 'front',
+        'upback': 'back',
+        None: None,
     },
 }
 
-src_path = ibs.export_to_coco(species_list, species_mapping=species_mapping, viewpoint_mapping=viewpoint_mapping, include_parts=True, require_image_reviewed=True)
+src_path = ibs.export_to_coco(
+    species_list,
+    species_mapping=species_mapping,
+    viewpoint_mapping=viewpoint_mapping,
+    include_parts=True,
+    require_image_reviewed=True,
+)
 dst_path = '/data/public/datasets/orientation.seadragon.coco'
 ut.move(src_path, dst_path)
 
@@ -189,29 +202,35 @@ species_list = [
 
 viewpoint_mapping = {
     'manta_ray_giant': {
-        'back'       : 'back',
-        'backleft'   : 'back',
-        'backright'  : 'back',
-        'down'       : 'down',
-        'downback'   : 'downback',
-        'downfront'  : 'downfront',
-        'downleft'   : 'downleft',
-        'downright'  : 'downright',
-        'front'      : 'front',
-        'frontleft'  : 'front',
-        'frontright' : 'front',
-        'ignore'     : None,
-        'left'       : 'left',
-        'right'      : 'right',
-        'up'         : 'up',
-        'upback'     : 'up',
-        'upfront'    : 'up',
-        'upleft'     : 'up',
-        'upright'    : 'up',
+        'back': 'back',
+        'backleft': 'back',
+        'backright': 'back',
+        'down': 'down',
+        'downback': 'downback',
+        'downfront': 'downfront',
+        'downleft': 'downleft',
+        'downright': 'downright',
+        'front': 'front',
+        'frontleft': 'front',
+        'frontright': 'front',
+        'ignore': None,
+        'left': 'left',
+        'right': 'right',
+        'up': 'up',
+        'upback': 'up',
+        'upfront': 'up',
+        'upleft': 'up',
+        'upright': 'up',
     }
 }
 
-src_path = ibs.export_to_coco(species_list, species_mapping=species_mapping, viewpoint_mapping=viewpoint_mapping, include_parts=False, require_image_reviewed=True)
+src_path = ibs.export_to_coco(
+    species_list,
+    species_mapping=species_mapping,
+    viewpoint_mapping=viewpoint_mapping,
+    include_parts=False,
+    require_image_reviewed=True,
+)
 dst_path = '/data/public/datasets/orientation.mantaray.coco'
 ut.move(src_path, dst_path)
 
@@ -232,7 +251,13 @@ species_list = [
 
 viewpoint_mapping = {}
 
-src_path = ibs.export_to_coco(species_list, species_mapping=species_mapping, viewpoint_mapping=viewpoint_mapping, include_parts=False, require_image_reviewed=True)
+src_path = ibs.export_to_coco(
+    species_list,
+    species_mapping=species_mapping,
+    viewpoint_mapping=viewpoint_mapping,
+    include_parts=False,
+    require_image_reviewed=True,
+)
 dst_path = '/data/public/datasets/orientation.hammerhead.coco'
 ut.move(src_path, dst_path)
 
@@ -255,7 +280,13 @@ species_list = [
 
 viewpoint_mapping = {}
 
-src_path = ibs.export_to_coco(species_list, species_mapping=species_mapping, viewpoint_mapping=viewpoint_mapping, include_parts=False, require_image_reviewed=True)
+src_path = ibs.export_to_coco(
+    species_list,
+    species_mapping=species_mapping,
+    viewpoint_mapping=viewpoint_mapping,
+    include_parts=False,
+    require_image_reviewed=True,
+)
 dst_path = '/data/public/datasets/orientation.rightwhale.coco'
 ut.move(src_path, dst_path)
 
