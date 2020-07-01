@@ -259,11 +259,11 @@ src_path = ibs.export_to_coco(species_list, species_mapping=species_mapping, vie
 dst_path = '/data/public/datasets/orientation.rightwhale.coco'
 ut.move(src_path, dst_path)
 
-tar -zcvf orientation.hammerhead.coco.tar.gz orientation.hammerhead.coco/
-tar -zcvf orientation.mantaray.coco.tar.gz   orientation.mantaray.coco/
-tar -zcvf orientation.rightwhale.coco.tar.gz orientation.rightwhale.coco/
-tar -zcvf orientation.seadragon.coco.tar.gz  orientation.seadragon.coco/
-tar -zcvf orientation.seaturtle.coco.tar.gz  orientation.seaturtle.coco/
+# tar -zcvf orientation.hammerhead.coco.tar.gz orientation.hammerhead.coco/
+# tar -zcvf orientation.mantaray.coco.tar.gz   orientation.mantaray.coco/
+# tar -zcvf orientation.rightwhale.coco.tar.gz orientation.rightwhale.coco/
+# tar -zcvf orientation.seadragon.coco.tar.gz  orientation.seadragon.coco/
+# tar -zcvf orientation.seaturtle.coco.tar.gz  orientation.seaturtle.coco/
 
 # rm -rf orientation.hammerhead.coco/
 # rm -rf orientation.mantaray.coco/
