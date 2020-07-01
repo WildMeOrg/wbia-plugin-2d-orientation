@@ -12,15 +12,18 @@ import utool as ut
 def run_tests():
     # Build module list and run tests
     import sys
+
     ut.change_term_title('RUN CURVRANK TESTS')
-    exclude_doctests_fnames = set([
-    ])
+    exclude_doctests_fnames = set([])
     exclude_dirs = [
-        '_images', '_output', '_weights',
+        '_images',
+        '_output',
+        '_weights',
     ]
     dpath_list = ['wbia_2d_orientation']
     doctest_modname_list = ut.find_doctestable_modnames(
-        dpath_list, exclude_doctests_fnames, exclude_dirs)
+        dpath_list, exclude_doctests_fnames, exclude_dirs
+    )
 
     for modname in doctest_modname_list:
         exec('import ' + modname, globals())
@@ -31,8 +34,10 @@ def run_tests():
     else:
         return 0
 
+
 if __name__ == '__main__':
     import multiprocessing
+
     multiprocessing.freeze_support()
     retcode = run_tests()
     sys.exit(retcode)
