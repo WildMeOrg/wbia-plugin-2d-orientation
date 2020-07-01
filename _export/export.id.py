@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import wbia
 import random
 import numpy as np
