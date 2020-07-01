@@ -29,7 +29,7 @@ in the wbia repository located at `wbia/wbia/control/IBEISControl.py`.  Register
 the module by adding the string (for example, `wbia_2d_orientation`) to the
 list `AUTOLOAD_PLUGIN_MODNAMES`.
 
-Alternatively, you can start an IBEIS 
+Alternatively, you can start an IBEIS
 
 # Detection COCO Datasets
 
