@@ -1,0 +1,13 @@
+argparse
+matplotlib
+numpy
+pandas
+scikit-image
+scikit-learn
+torch
+torchvision
+# cv2
+tqdm
+wbia
+wbia-utool
+wbia-vtool

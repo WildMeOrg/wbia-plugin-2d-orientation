@@ -46,21 +46,6 @@ MICRO = 0
 SUFFIX = 'dev0'
 VERSION = '%d.%d.%d.%s' % (MAJOR, MINOR, MICRO, SUFFIX)
 PACKAGES = ['wbia_2d_orientation']
-REQUIREMENTS = [
-    'torchvision',
-    'torch',
-    'numpy',
-    'matplotlib',
-    'wbia-utool',
-    'wbia-vtool',
-    # 'cv2',
-    'tqdm',
-    'wbia',
-    'pandas',
-    'argparse',
-    'scikit-learn',
-    'scikit-image',
-]
 
 
 def git_version():
@@ -128,6 +113,13 @@ pip install opencv-python
         )
         sys.exit(0)
 
+    extras_require = {
+        'all': parse_requirements('requirements.txt'),
+        'build': parse_requirements('requirements/build.txt'),
+        'runtime': parse_requirements('requirements/runtime.txt'),
+    }
+    install_requires = parse_requirements('requirements/runtime.txt')
+
     write_version_py()
     setup(
         name=NAME,
@@ -141,7 +133,8 @@ pip install opencv-python
         license=LICENSE,
         platforms=PLATFORMS,
         packages=PACKAGES,
-        install_requires=REQUIREMENTS,
+        install_requires=install_requires,
+        extras_require=extras_require,
         keywords=CLASSIFIERS.replace('\n', ' ').strip(),
     )
 
