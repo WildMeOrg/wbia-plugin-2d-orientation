@@ -99,20 +99,6 @@ __version_full__ = '%%s.%%s' %% (__version__, __version_git__, )
 
 
 def do_setup():
-    try:
-        import cv2  # NOQA
-    except ImportError:
-        print(
-            """
-OpenCV (cv2) required by this module.
-
-Install using source provided by https://github.com/opencv/opencv
-or
-pip install opencv-python
-"""
-        )
-        sys.exit(0)
-
     extras_require = {
         'all': parse_requirements('requirements.txt'),
         'build': parse_requirements('requirements/build.txt'),
