@@ -8,6 +8,6 @@ torch
 torchvision
 # cv2
 tqdm
-wbia
 wbia-utool
 wbia-vtool
+wildbook-ia
